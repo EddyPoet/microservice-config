@@ -5,22 +5,30 @@ spring:
 ---
 server:
   port: 8001
+#配置mybatis相关文件路径
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml 
-  type-aliases-package: bill.entities
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  #映射配置文件路径
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #核心配置文件路径
+  config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  level:
+    com.bills.mapper: debug
 spring:
   profiles: dev # 开发环境
   application:
     name: microservice-bill-provider			# ******服务名*******
 #数据源配置
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8 #数据库连接地址，
     username: root
     password: root
+    #mysql8版本以上的驱动包，需要指定以下时区
+    url: jdbc:mysql://127.0.0.1:3306/bill?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+    #mysql8版本以上指定新的驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #引入Druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
-    #数据源其他配置, DataSourceProperties中没有相关属性,默认无法绑定
+    #   数据源其他配置, DataSourceProperties中没有相关属性,默认无法绑定
     initialSize: 8
     minIdle: 5
     maxActive: 20
@@ -32,11 +40,6 @@ spring:
     testOnBorrow: false
     testOnReturn: false
     poolPreparedStatements: true
-    #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall,logback
-    maxPoolPreparedStatementPerConnectionSize: 25
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 #注册中心配置
 eureka:
   client:
@@ -50,22 +53,30 @@ eureka:
 ---
 server:
   port: 8001
+#配置mybatis相关文件路径
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml 
-  type-aliases-package: bill.entities
-  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  #映射配置文件路径
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  #核心配置文件路径
+  config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  level:
+    com.bills.mapper: debug
 spring:
-  profiles: prod # 生产环境
+  profiles: prod # 开发环境
   application:
     name: microservice-bill-provider			# ******服务名*******
 #数据源配置
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.10.11:33306/springcloud_db02?serverTimezone=GMT%2B8 #数据库连接地址，
     username: root
-    password: 123456
+    password: root
+    #mysql8版本以上的驱动包，需要指定以下时区
+    url: jdbc:mysql://192.168.10.11:33306/bill?useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT%2B8
+    #mysql8版本以上指定新的驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #引入Druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
-    #数据源其他配置, DataSourceProperties中没有相关属性,默认无法绑定
+    #   数据源其他配置, DataSourceProperties中没有相关属性,默认无法绑定
     initialSize: 8
     minIdle: 5
     maxActive: 20
@@ -77,11 +88,6 @@ spring:
     testOnBorrow: false
     testOnReturn: false
     poolPreparedStatements: true
-    #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
-    filters: stat,wall,logback
-    maxPoolPreparedStatementPerConnectionSize: 25
-    useGlobalDataSourceStat: true
-    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 #注册中心配置
 eureka:
   client:
