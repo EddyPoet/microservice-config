@@ -7,7 +7,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 server:
-  port: 8002
+  port: 8001
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
@@ -54,7 +54,7 @@ emp:
   name: 自定义123dev
 ---
 server:
-  port: 8002
+  port: 8001
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
@@ -62,7 +62,6 @@ mybatis:
 spring:
   profiles: prod # 生产环境
   application:
-    name: application:
     name: microservice-providers-provider			# ******服务名*******
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
