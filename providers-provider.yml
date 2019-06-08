@@ -1,6 +1,4 @@
 #注意：如果在记事本上编写，下面的缩进不要使用Tab来缩进，不然报错
-server:
-  port: 8002
 logging:
   level:
     com.bills.mapper: debug
@@ -8,6 +6,8 @@ spring:
   profiles:
     active: dev # 激活开发环境配置
 ---
+server:
+  port: 8002
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
@@ -53,6 +53,8 @@ eureka:
 emp: 
   name: 自定义123dev
 ---
+server:
+  port: 8002
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
