@@ -7,7 +7,7 @@ spring:
     active: dev # 激活开发环境配置
 ---
 server:
-  port: 8001
+  port: 8002
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
@@ -54,7 +54,7 @@ emp:
   name: 自定义123dev
 ---
 server:
-  port: 8001
+  port: 8002
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
