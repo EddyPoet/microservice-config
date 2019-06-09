@@ -40,6 +40,7 @@ eureka:
   server:
     enable-self-preservation: true # 开启自我保护机制*****************
 #rabbitMQ服务访问配置
+spring:
   rabbitmq:
     host: 192.168.10.11
     port: 5672
