@@ -110,7 +110,7 @@ mybatis:
 spring:
   profiles: prod02 # 生产环境
   application:
-    name: microservice-bill-provider02			# ******服务名*******
+    name: microservice-bill-provider			# ******服务名集群时要一致，客户端负载均衡调用的是服务名*******
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
