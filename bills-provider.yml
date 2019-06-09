@@ -87,7 +87,6 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 #redis配置
-spring:
   redis:
     host: 192.168.10.11
     port: 6380
