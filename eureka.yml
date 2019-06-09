@@ -2,19 +2,6 @@
 spring:
   profiles:
     active: dev # 激活开发环境配置
-#rabbitMQ服务访问配置
-  rabbitmq:
-    host: 192.168.10.11
-    port: 5672
-    username: guest
-    password: guest
-#  暴露触发消息总线的地址
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
-
 ---
 server:
   port: 6001 #端口号
