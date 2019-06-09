@@ -99,7 +99,9 @@ eureka:
       defaultZone: http://docker01:6001/eureka,http://docker02:6002/eureka
   instance:
     instanceId: ${spring.application.name}:${server.port}
-    prefer-ip-address: true 
+	ip-address: 192.168.10.11 #强制指定IP地址，默认会获取本机的IP地址
+    prefer-ip-address: true
+
 emp: 
   name: 自定义信息prod
 
