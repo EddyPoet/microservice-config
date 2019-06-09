@@ -102,7 +102,7 @@ emp:
   name: 自定义信息prod
 ---
 server:
-  port: 8001
+  port: 8002
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.bills.entities
