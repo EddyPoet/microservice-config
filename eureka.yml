@@ -30,7 +30,7 @@ spring:
 
 eureka:
   instance:
-    hostname: docker02
+    hostname: docker01
   client:
     registerWithEureka: false 
     fetchRegistry: false 
