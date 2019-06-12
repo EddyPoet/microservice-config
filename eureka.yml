@@ -22,7 +22,7 @@ eureka:
     enable-self-preservation: false # 禁用自我保护机制*****************
 ---
 server:
-  port: 6001 #端口号，如果镜像生成容器时，这个端口号要对应端口
+  port: 6002 #端口号，如果镜像生成容器时，这个端口号要对应端口
 spring:
   profiles: prod # 生产环境
   applications:
@@ -30,12 +30,12 @@ spring:
 
 eureka:
   instance:
-    hostname: docker01 # eureka服务端的实例名称
+    hostname: docker02 # eureka服务端的实例名称
   client:
     registerWithEureka: false 
     fetchRegistry: false 
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:6001/eureka/#单机版写自己的服务器地址
-      defaultZone: http://192.168.10.11:6002/eureka/#集群版写所有对方的服务器地址
+      defaultZone: http://192.168.10.11:6001/eureka/#集群版写所有对方的服务器地址
   server:
     enable-self-preservation: true # 开启自我保护机制*****************
