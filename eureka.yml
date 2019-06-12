@@ -30,12 +30,12 @@ spring:
 
 eureka:
   instance:
-    hostname: docker02
+    hostname: 192.168.10.11:6002
   client:
     registerWithEureka: false 
     fetchRegistry: false 
     serviceUrl:
       #defaultZone: http://${eureka.instance.hostname}:6001/eureka/#单机版写自己的服务器地址
-      defaultZone: http://docker01:6001/eureka/#集群版写所有对方的服务器地址
+      defaultZone: http://192.168.10.11:6001/eureka/#集群版写所有对方的服务器地址
   server:
     enable-self-preservation: true # 开启自我保护机制*****************
